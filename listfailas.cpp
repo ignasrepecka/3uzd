@@ -35,27 +35,9 @@ void listIsFailo(std::list<Studentasl>& studentail, int a, const string& filenam
 
     while (getline(failas, line)) {
         istringstream iss(line);
-        string vardas, pavarde;
-        iss >> vardas >> pavarde;
-
-        list<int> balai;
-        int j;
-
-        for(int i = 0; i < 3; i++) {
-            iss >> j;
-            balai.push_back(j);
-        }
-        // Read the exam score
-        int egz;
-        iss >> egz;
-
         Studentasl studentasl;
-        studentasl.vardas = vardas;
-        studentasl.pavarde = pavarde;
-        studentasl.balai = balai;
-        studentasl.egz = egz;
-
-        listCalculateStatistics(studentasl);
+        studentasl.readStudent(iss);
+        studentasl.listCalculateStatistics();
         studentail.push_back(studentasl);
     }
 
@@ -92,19 +74,19 @@ void listIsFailo(std::list<Studentasl>& studentail, int a, const string& filenam
     list<Studentasl>& target = (Strat == 1) ? kietiakai : studentail;
 
     for (const Studentasl& studentasl : target) {
-        failas1 << studentasl.vardas << "\t" << studentasl.pavarde << "\t";
+        failas1 << studentasl.getVardas() << "\t" << studentasl.getPavarde() << "\t";
         if (a == 1) {
-            failas1 << studentasl.vidurkis << endl;
+            failas1 << studentasl.getVidurkis() << endl;
         } else if (a == 2) {
-            failas1 << studentasl.mediana << endl;
+            failas1 << studentasl.getMediana() << endl;
         }
     }
     for (const Studentasl& studentasl : vargsiukai) {
-        failas2 << studentasl.vardas << "\t" << studentasl.pavarde << "\t";
+        failas2 << studentasl.getVardas() << "\t" << studentasl.getPavarde() << "\t";
             if (a == 1) {
-        failas2 << studentasl.vidurkis << endl;
+        failas2 << studentasl.getVidurkis() << endl;
             } else if (a == 2) {
-        failas2 << studentasl.mediana << endl;
+        failas2 << studentasl.getMediana() << endl;
         }
     }
     failas1.close();
