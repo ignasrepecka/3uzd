@@ -17,13 +17,13 @@ void listStrat(std::list<Studentasl>& studentail, int a, int Strat, int sortOpti
         auto start = high_resolution_clock::now();
         for (const Studentasl& studentasl : studentail) {
             if (a == 1) {
-                if (studentasl.vidurkis >= 5) {
+                if (studentasl.getVidurkis() >= 5) {
                     kietiakai.push_back(studentasl);
                 } else {
                     vargsiukai.push_back(studentasl);
                 }
             } else if (a == 2) {
-                if (studentasl.mediana >= 5) {
+                if (studentasl.getMediana() >= 5) {
                     kietiakai.push_back(studentasl);
                 } else {
                     vargsiukai.push_back(studentasl);
@@ -45,7 +45,7 @@ void listStrat(std::list<Studentasl>& studentail, int a, int Strat, int sortOpti
         } else if (Strat==2) {
         auto start = high_resolution_clock::now();
         studentail.erase(std::remove_if(studentail.begin(), studentail.end(), [&](const Studentasl& studentasl){
-            bool isVargsiukas = (a == 1 && studentasl.vidurkis < 5) || (a == 2 && studentasl.mediana < 5);
+            bool isVargsiukas = (a == 1 && studentasl.getVidurkis() < 5) || (a == 2 && studentasl.getMediana() < 5);
             if (isVargsiukas) {
                 vargsiukai.push_back(studentasl);
             }
@@ -67,7 +67,7 @@ void listStrat(std::list<Studentasl>& studentail, int a, int Strat, int sortOpti
         auto start = high_resolution_clock::now();
 
         auto partitionPoint = std::partition(studentail.begin(), studentail.end(), [&](const Studentasl& studentasl){
-            return (a == 1 && studentasl.vidurkis >= 5) || (a == 2 && studentasl.mediana >= 5);
+            return (a == 1 && studentasl.getVidurkis() >= 5) || (a == 2 && studentasl.getMediana() >= 5);
         });
 
         std::copy(partitionPoint, studentail.end(), std::back_inserter(vargsiukai));
