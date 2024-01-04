@@ -8,23 +8,24 @@
 
 using namespace std;
 
-void listCalculateStatistics(Studentasl& studentasl) {
+void Studentasl::listCalculateStatistics() {
     double suma = 0;
-    for(int j : studentasl.balai) {
+    for(int j : this->getBalai()) {
         suma += j;
     }
 
-    studentasl.balai.sort();
-    auto it = studentasl.balai.begin();
-    advance(it, studentasl.balai.size() / 2);
-    if ((studentasl.balai.size()) % 2 == 0) {
+    std::list<int> balaiCopy = this->getBalai();
+    balaiCopy.sort();
+    auto it = balaiCopy.begin();
+    std::advance(it, std::distance(balaiCopy.begin(), balaiCopy.end())/2);
+    if ((balaiCopy.size()) % 2 == 0) {
         int val1 = *it;
         --it;
         int val2 = *it;
-        studentasl.mediana = (val1 + val2) / 2.0;
+        this->mediana = (val1 + val2) / 2.0;
     } else {
-        studentasl.mediana = *it;
+        this->mediana = *it;
     }
 
-    studentasl.vidurkis = suma/studentasl.balai.size();
+    this->vidurkis = suma/balaiCopy.size();
 }
