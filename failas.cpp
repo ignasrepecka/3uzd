@@ -35,27 +35,9 @@ void isFailo(std::vector<Studentas>& studentai, int a, const string& filename) {
 
     while (getline(failas, line)) {
         istringstream iss(line);
-        string vardas, pavarde;
-        iss >> vardas >> pavarde;
-
-        vector<int> balai;
-        int j;
-
-        for(int i = 0; i < 3; i++) {
-            iss >> j;
-            balai.push_back(j);
-        }
-        // Read the exam score
-        int egz;
-        iss >> egz;
-
         Studentas studentas;
-        studentas.vardas = vardas;
-        studentas.pavarde = pavarde;
-        studentas.balai = balai;
-        studentas.egz = egz;
-
-        calculateStatistics(studentas);
+        studentas.readStudent(iss);
+        studentas.calculateStatistics();
         studentai.push_back(studentas);
     }
 
@@ -83,28 +65,28 @@ void isFailo(std::vector<Studentas>& studentai, int a, const string& filename) {
     // Start timing
     start = high_resolution_clock::now();
 
-    int size = (Strat == 1) or (Strat==3) ? studentai.size() : (studentai.size() + vargsiukai.size());
+    int size = (Strat == 1) or (Strat==3)? studentai.size() : (studentai.size() + vargsiukai.size());
 
     // Write the students to files
     ofstream failas1("kietiakai" + to_string(size) + ".txt");
     ofstream failas2("vargsiukai" + to_string(size) + ".txt");
 
-    vector<Studentas>& target = (Strat == 1) or (Strat == 3) ? kietiakai : studentai;
+    vector<Studentas>& target = (Strat == 1) or (Strat==3) ? kietiakai : studentai;
 
     for (const Studentas& studentas : target) {
-        failas1 << studentas.vardas << "\t" << studentas.pavarde << "\t";
+        failas1 << studentas.getVardas() << "\t" << studentas.getPavarde() << "\t";
         if (a == 1) {
-            failas1 << studentas.vidurkis << endl;
+            failas1 << studentas.getVidurkis() << endl;
         } else if (a == 2) {
-            failas1 << studentas.mediana << endl;
+            failas1 << studentas.getMediana() << endl;
         }
     }
     for (const Studentas& studentas : vargsiukai) {
-        failas2 << studentas.vardas << "\t" << studentas.pavarde << "\t";
+        failas2 << studentas.getVardas() << "\t" << studentas.getPavarde() << "\t";
             if (a == 1) {
-        failas2 << studentas.vidurkis << endl;
+        failas2 << studentas.getVidurkis() << endl;
             } else if (a == 2) {
-        failas2 << studentas.mediana << endl;
+        failas2 << studentas.getMediana() << endl;
         }
     }
     failas1.close();
