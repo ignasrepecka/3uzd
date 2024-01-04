@@ -17,13 +17,13 @@ void strat(std::vector<Studentas>& studentai, int a, int Strat, int sortOption, 
         auto start = high_resolution_clock::now();
         for (const Studentas& studentas : studentai) {
             if (a == 1) {
-                if (studentas.vidurkis >= 5) {
+                if (studentas.getVidurkis() >= 5) {
                     kietiakai.push_back(studentas);
                 } else {
                     vargsiukai.push_back(studentas);
                 }
             } else if (a == 2) {
-                if (studentas.mediana >= 5) {
+                if (studentas.getMediana() >= 5) {
                     kietiakai.push_back(studentas);
                 } else {
                     vargsiukai.push_back(studentas);
@@ -44,7 +44,7 @@ void strat(std::vector<Studentas>& studentai, int a, int Strat, int sortOption, 
         } else if (Strat==2) {
         auto start = high_resolution_clock::now();
         studentai.erase(std::remove_if(studentai.begin(), studentai.end(), [&](const Studentas& studentas) {
-            bool isVargsiukas = (a == 1 && studentas.vidurkis < 5) || (a == 2 && studentas.mediana < 5);
+            bool isVargsiukas = (a == 1 && studentas.getVidurkis() < 5) || (a == 2 && studentas.getMediana() < 5);
             if (isVargsiukas) {
                 vargsiukai.push_back(studentas);
             }
@@ -66,9 +66,9 @@ void strat(std::vector<Studentas>& studentai, int a, int Strat, int sortOption, 
         auto start = high_resolution_clock::now();
             auto it = std::partition(studentai.begin(), studentai.end(), [a](const Studentas& studentas) {
                 if (a == 1) {
-                    return studentas.vidurkis >= 5;
+                    return studentas.getVidurkis() >= 5;
                 } else if (a == 2) {
-                    return studentas.mediana >= 5;
+                    return studentas.getMediana() >= 5;
                 }
                 return false;
             });
