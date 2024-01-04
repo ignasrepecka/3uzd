@@ -5,7 +5,7 @@
 #include <string>
 #include <istream>
 #include <ostream>
-
+#include <iostream>
 class Studentas {
     private:
     std::string vardas;
