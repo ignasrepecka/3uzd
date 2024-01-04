@@ -5,19 +5,19 @@
 #include <chrono>
 
 bool compareByName(const Studentasl& a, const Studentasl& b) {
-    return a.vardas < b.vardas;
+    return a.getVardas() < b.getVardas();
 }
 
 bool compareBySurname(const Studentasl& a, const Studentasl& b) {
-    return a.pavarde < b.pavarde;
+    return a.getPavarde() < b.getPavarde();
 }
 
 bool compareByAverage(const Studentasl& a, const Studentasl& b) {
-    return a.vidurkis < b.vidurkis;
+    return a.getVidurkis() < b.getVidurkis();
 }
 
 bool compareByMedian(const Studentasl& a, const Studentasl& b) {
-    return a.mediana < b.mediana;
+    return a.getMediana() < b.getMediana();
 }
 
 void listSortStudents(std::list<Studentasl>& studentail, int sortOption) {
