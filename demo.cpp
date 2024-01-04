@@ -3,6 +3,7 @@
 #include <vector>
 
 void demo() {
+    {
     Studentas s1;
     std::cout << "Iveskite 1studento varda pavarde 3 balus ir egzamina:" << std::endl;
     std::cin >> s1;
@@ -15,4 +16,6 @@ void demo() {
     Studentas s3;
     s3 = s1;
     std::cout << "3studento parametrai (priskirti nuo s1): " << s3 << std::endl;
+    }
+    std::cout << "End of demo function." << std::endl;
 }
