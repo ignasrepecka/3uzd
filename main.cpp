@@ -48,7 +48,7 @@ int main() {
                 int n;
                 cout << "Kiek studentu yra " << i << "-ajame faile?: ";
                 cin >> n;
-                string filename = "C:\\Users\\Administrator\\Desktop\\cc++++\\v0.3\\studentai" + to_string(n) + ".txt";
+                string filename = "C:\\Users\\Administrator\\Desktop\\cc++++\\v1.1\\studentai" + to_string(n) + ".txt";
                 if (b==1) {
                     isFailo(studentai, a, filename);
                 } else {
