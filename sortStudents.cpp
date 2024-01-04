@@ -3,19 +3,19 @@
 #include <iostream>
 
 bool compareByName(const Studentas& a, const Studentas& b) {
-    return a.vardas < b.vardas;
+    return a.getVardas() < b.getVardas();
 }
 
 bool compareBySurname(const Studentas& a, const Studentas& b) {
-    return a.pavarde < b.pavarde;
+    return a.getPavarde() < b.getPavarde();
 }
 
 bool compareByAverage(const Studentas& a, const Studentas& b) {
-    return a.vidurkis < b.vidurkis;
+    return a.getVidurkis() < b.getVidurkis();
 }
 
 bool compareByMedian(const Studentas& a, const Studentas& b) {
-    return a.mediana < b.mediana;
+    return a.getMediana() < b.getMediana();
 }
 
 void sortStudents(std::vector<Studentas>& studentai, int sortOption) {
