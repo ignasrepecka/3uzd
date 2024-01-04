@@ -18,6 +18,8 @@ public:
     // Constructor
     Studentas() : vidurkis(0), mediana(0), egz(0) {}
 
+    ~Studentas() {}
+
     // Getters
     inline std::string getVardas() const { return vardas; }
     inline std::string getPavarde() const { return pavarde; }
