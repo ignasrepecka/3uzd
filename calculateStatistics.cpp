@@ -9,17 +9,18 @@
 
 using namespace std;
 
-void calculateStatistics(Studentas& studentas) {
+void Studentas::calculateStatistics() {
     double suma = 0;
-    for(int j : studentas.balai) {
+    for(int j : this->getBalai()) {
         suma += j;
     }
 
-    sort(studentas.balai.begin(), studentas.balai.end());
-    if ((studentas.balai.size()) % 2 == 0)
-        studentas.mediana = (studentas.balai[studentas.balai.size()/2 - 1] + studentas.balai[studentas.balai.size()/2]) / 2.0;
+    std::vector<int> balaiCopy = this->getBalai();
+    sort(balaiCopy.begin(), balaiCopy.end());
+    if ((balaiCopy.size()) % 2 == 0)
+        this->mediana = (balaiCopy[balaiCopy.size()/2 - 1] + balaiCopy[balaiCopy.size()/2]) / 2.0;
     else
-        studentas.mediana = studentas.balai[studentas.balai.size()/2];
+        this->mediana = balaiCopy[balaiCopy.size()/2];
 
-    studentas.vidurkis = suma/studentas.balai.size();
+    this->vidurkis = suma/balaiCopy.size();
 }
