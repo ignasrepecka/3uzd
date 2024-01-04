@@ -6,123 +6,7 @@ Processor	Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz, 3192 Mhz, 4 Core(s), 4 Logica
 
 SSD	256gb
 
-v0.3 Testai:
-
-testai su vector:
-
-![image](https://github.com/ignasrepecka/c--/assets/146369153/b1f7a126-edc7-4ecc-a77b-0f72ec7d2425)
-![image](https://github.com/ignasrepecka/c--/assets/146369153/7d7588f6-2b56-432d-9181-213e2edb60de)
-
-1000 vid
-
-Duomenu nuskaitymas:6122 ms
-
-Rusiavimas:3507.5 ms
-
-Isvedimas i kietiakai ir vargsiukai:8311 ms
-
-
-
-10000 vid
-
-Duomenu nuskaitymas:59951 ms
-
-Rusiavimas:50378.5 ms
-
-Isvedimas i kietiakai ir vargsiukai:63942.5 ms
-
-
-
-100000 vid
-
-Duomenu nuskaitymas:589937.5 ms
-
-Rusiavimas:681208 ms
-
-Isvedimas i kietiakai ir vargsiukai:620236 ms
-
-
-
-1000000 vid
-
-Duomenu nuskaitymas:6050765.5 ms
-
-Rusiavimas:8612110 ms
-
-Isvedimas i kietiakai ir vargsiukai:6215601.5 ms
-
-
-testai su list:
-
-![image](https://github.com/ignasrepecka/c--/assets/146369153/d4dadc93-5f40-4ab0-9d00-43689c4c9b31)
-![image](https://github.com/ignasrepecka/c--/assets/146369153/bed89fb3-d351-4c24-bedc-e734298abf92)
-
-1000 vid
-
-Duomenu nuskaitymas:10505.5 ms
-
-Rusiavimas:0 ms
-
-Isvedimas i kietiakai ir vargsiukai:8969.5 ms
-
-
-
-10000 vid
-
-Duomenu nuskaitymas:100435.5 ms
-
-Rusiavimas:8107.5 ms
-
-Isvedimas i kietiakai ir vargsiukai:66192.5 ms
-
-
-
-100000 vid
-
-Duomenu nuskaitymas:1004638 ms
-
-Rusiavimas:101913 ms
-
-Isvedimas i kietiakai ir vargsiukai:646163.5 ms
-
-
-
-1000000 vid
-
-Duomenu nuskaitymas:10087967.5 ms
-
-Rusiavimas:1313770 ms
-
-Isvedimas i kietiakai ir vargsiukai:6411551.5 ms
-
-
-
-10000000 vid 
-
-Duomenu nuskaitymas:101922986 ms
-
-Rusiavimas:17082600 ms
-
-Isvedimas i kietiakai ir vargsiukai:64653483 ms
-![image](https://github.com/ignasrepecka/c--/assets/146369153/194dbd15-b089-423c-b6d4-681dbbc35b05)
-![image](https://github.com/ignasrepecka/c--/assets/146369153/edf1056e-b456-4553-8c44-a1f9b13ae4de)
-![image](https://github.com/ignasrepecka/c--/assets/146369153/43af7a60-1f88-4ca6-85e5-7512950e2b8d)
-![image](https://github.com/ignasrepecka/c--/assets/146369153/bda30e52-4440-4db0-90cf-93f8a7d77c53)
-
-Išvados:
-
-Matome jog šioje programoje
-
-Nuskaitymas greitesnis su vector
-
-Rusiavimas greitesnis su list
-
-Išvedimas panašaus greičio
-
-Tačiau su 10mil studentų pasibaigė atmintis naudojant vector
-
-
-v1.0
+v1.1
 Naudojimo instrukcija
 
 Pasidaryti folderį
@@ -137,17 +21,15 @@ Paleisti RunMe.bat
 
 Spartos analizė
 
-![image](https://github.com/ignasrepecka/c--/assets/146369153/7be5005a-41ce-4202-b762-123da5ea6e43)
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/d5e227bd-ca3f-4f53-bd6f-8bd9c47fe730)
 
-![image](https://github.com/ignasrepecka/c--/assets/146369153/ff5e31bf-d279-4106-b126-3d68f8e98851)
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/408c9119-655e-4f95-a919-e49971eb6fc2)
 
-![image](https://github.com/ignasrepecka/c--/assets/146369153/a3293a1d-0ada-4e16-b4b9-04aee3717186)
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/c5e9506c-a0dc-4a4c-8cf2-10f8e9522adc)
 
-![image](https://github.com/ignasrepecka/c--/assets/146369153/fbd9732b-8d3d-49b6-9e95-258f720a89ec)
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/27a8a9ff-e5e2-4416-9ae6-8e392a6f290b)
 
 Isvados:
-Vector tipo konteineryje nepavyko pagerinti spartos.
-Nesekmingai bandžiau optimizuoti 1 strategiją
-Teoriškai 2 strategija turėtu labiau neefektyvi
-
-List tipo konteineryje matomas nežymus paspartinimas naudojant optimizuotą 2 strategiją
+1. v1.1 spartesnė už v1.0
+2. v1.1 sparčiausia naudojant O3 flagą
+3. v1.0 sparčiausia naudojant O3 flagą
