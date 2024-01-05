@@ -6,6 +6,7 @@
 #include <istream>
 #include <ostream>
 #include <iostream>
+
 class Studentas {
     private:
     std::string vardas;
@@ -57,7 +58,7 @@ public:
     // New method
     std::istream& readStudent(std::istream& is) {
         is >> this->vardas >> this->pavarde;
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 2; i++) {
             int j;
             is >> j;
             this->balai.push_back(j);
@@ -71,14 +72,7 @@ public:
         return s.readStudent(is);
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-        os << s.getVardas() << " " << s.getPavarde() << " Grades: ";
-        for (int grade : s.getBalai()) {
-            os << grade << " ";
-        }
-        os << "Exam: " << s.getEgz();
-        return os;
-    }
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
 };
 
 #endif // CALCULATESTATISTICS_H_INCLUDED
