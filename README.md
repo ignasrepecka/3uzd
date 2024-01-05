@@ -35,3 +35,8 @@ Naudojame kopijavimo priskyrimo operatorių, norėdami priskirti 'newStudent' at
 ![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/5b7f2f24-5b5c-4bab-a948-af313a1cf723)
 
 Tikrinimas ar destruktorius veikia.
+v1.5
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/c4580ff0-5a85-4647-b77c-01095b964e5b)
+class Studentas : public Zmogus reiskia, kad Studentas yra isvestinė klasė
+
+Studentas klase is klases Zmogus paveldi varda ir pavarde.
