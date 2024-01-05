@@ -18,6 +18,8 @@ using namespace std;
 int main() {
     srand(time(0));
 
+    Zmogus zmogusObj;  // This line will cause a compile error
+
     int a;
     cout << "Ka pasirinksite?: 1 - Vidurkis, 2 - Mediana, 3 - Generuoti failus, 4 - Ivesti: ";
     cin >> a;
