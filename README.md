@@ -43,3 +43,7 @@ v1.5
 class Studentas : public Zmogus reiskia, kad Studentas yra isvestinė klasė
 
 Studentas klase is klases Zmogus paveldi varda ir pavarde.
+
+Klase laikoma abstrakcia klase, jei ji turi bent viena gryna virtualia funkcija. Gryna virtuali funkcija yra virtuali funkcija, kuri deklaruojama bazineje klaseje ir neturi su ta bazine klase susijusio apibrezimo.
+
+Siuo atveju tai calculateStatistics() funkcija
