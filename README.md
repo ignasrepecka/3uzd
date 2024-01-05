@@ -6,7 +6,7 @@ Processor	Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz, 3192 Mhz, 4 Core(s), 4 Logica
 
 SSD	256gb
 
-v1.1
+v1.2
 Naudojimo instrukcija
 
 Pasidaryti folderį
@@ -19,17 +19,19 @@ Sumeti .h failus į include
 
 Paleisti RunMe.bat
 
-Spartos analizė
+v1.2
+![Capture ivedimas](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/6a3da033-76be-48de-9033-1f5aba45ace3)
 
-![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/d5e227bd-ca3f-4f53-bd6f-8bd9c47fe730)
+pasirenkant ivesti funkcija testuojamas 3-ju taisykle
 
-![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/408c9119-655e-4f95-a919-e49971eb6fc2)
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/54440547-81cb-4b8d-a0c2-4ced99fa6ada)
 
-![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/c5e9506c-a0dc-4a4c-8cf2-10f8e9522adc)
+Naudojameįvesties operatorių, kad perskaitytumėte mokinio informaciją į 'temp'.
 
-![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/27a8a9ff-e5e2-4416-9ae6-8e392a6f290b)
+Naudojame kopijavimo konstruktorių, kad sukurtumėte naują 'Studentas' objektą 'newStudent' su ta pačia informacija kaip ir 'temp'.
 
-Isvados:
-1. v1.1 spartesnė už v1.0
-2. v1.1 sparčiausia naudojant O3 flagą
-3. v1.0 sparčiausia naudojant O3 flagą
+Naudojame kopijavimo priskyrimo operatorių, norėdami priskirti 'newStudent' atitinkamam elementus 'studentai' vektoriui.
+
+![image](https://github.com/ignasrepecka/2uzd_uni/assets/146369153/5b7f2f24-5b5c-4bab-a948-af313a1cf723)
+
+Tikrinimas ar destruktorius veikia.
