@@ -7,10 +7,28 @@
 #include <ostream>
 #include <iostream>
 
-class Studentas {
-    private:
+class Zmogus {
+    protected:
     std::string vardas;
     std::string pavarde;
+
+public:
+    // Constructor
+    Zmogus() {}
+
+    // Virtual Destructor
+    virtual ~Zmogus() {}
+
+    // Pure virtual function
+    virtual void calculateStatistics() = 0;
+
+    // Getters
+    inline std::string getVardas() const { return vardas; }
+    inline std::string getPavarde() const { return pavarde; }
+};
+
+class Studentas : public Zmogus {
+    private:
     std::vector<int> balai;
     double vidurkis;
     double mediana;
@@ -28,14 +46,13 @@ public:
 
     // 2. Copy constructor
     Studentas(const Studentas& other)
-        : vardas(other.vardas), pavarde(other.pavarde), balai(other.balai),
+        : Zmogus(other), balai(other.balai),
           vidurkis(other.vidurkis), mediana(other.mediana), egz(other.egz) {}
 
     // 3. Copy assignment operator
     Studentas& operator=(const Studentas& other) {
         if (this != &other) {
-            vardas = other.vardas;
-            pavarde = other.pavarde;
+            Zmogus::operator=(other);
             balai = other.balai;
             vidurkis = other.vidurkis;
             mediana = other.mediana;
@@ -45,8 +62,6 @@ public:
     }
 
     // Getters
-    inline std::string getVardas() const { return vardas; }
-    inline std::string getPavarde() const { return pavarde; }
     std::vector<int> getBalai() const { return balai; }
     double getVidurkis() const { return vidurkis; }
     double getMediana() const { return mediana; }
