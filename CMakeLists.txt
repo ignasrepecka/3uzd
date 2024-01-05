@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.28.1)
 set(CMAKE_CXX_COMPILER "C:/MinGW/bin/g++.exe")
 set(CMAKE_C_COMPILER "C:/MinGW/bin/gcc.exe")
 
-project(v1.2)
+project(v1.5)
 
 include_directories(include)
 
