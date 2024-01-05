@@ -41,7 +41,6 @@ public:
     // Rule of Three
     // 1. Destructor
     ~Studentas() {
-        std::cout << "Destructor called for " << vardas << std::endl;
     }
 
     // 2. Copy constructor
